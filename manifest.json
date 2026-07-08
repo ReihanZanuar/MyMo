@@ -1,0 +1,23 @@
+{
+  "name": "MyMo - Financial Freedom",
+  "short_name": "MyMo",
+  "description": "Aplikasi pencatatan keuangan yang mudah dan aman untuk mengelola keuangan Anda",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3730A3",
+  "icons": [
+    {
+      "src": "Attachment/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Attachment/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

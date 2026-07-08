@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="MyMo - Aplikasi pencatatan keuangan yang mudah dan aman untuk mengelola keuangan Anda">
+    <title>MyMo - My Money, Your Financial Freedom</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="MyMo">
+    <link rel="apple-touch-icon" href="Attachment/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3730A3">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Attachment/logo.png">
+</head>
+<body>
+    <!-- Decorative Ambient Background Elements -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="attachment/logo-tansparan.png" alt="MyMo logo" class="logo-image">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#features">Fitur</a></li>
+                    <li><a href="#benefits">Keunggulan</a></li>
+                    <li><a href="#how-it-works">Cara Kerja</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#download" class="btn btn-primary">Mulai Gratis</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Kelola Keuangan Anda dengan
+                        <span class="gradient-text">Lebih Cerdas</span>
+                    </h1>
+                    <p class="hero-description">
+                        MyMo membantu Anda mencatat, menganalisis, dan mengoptimalkan setiap rupiah yang Anda miliki.
+                        Sederhana, aman, dan powerful.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="login.html" class="btn btn-primary btn-lg">Coba Gratis Sekarang</a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-lg">Lihat Demo</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Video placeholder - akan ditambahkan nanti -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fitur Lengkap untuk Keuangan Anda</h2>
+                <p class="section-description">Semua yang Anda butuhkan dalam satu aplikasi</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/Pencatatan-Otomatis.svg" alt="Pencatatan Otomatis" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">Pencatatan Otomatis</h3>
+                    <p class="feature-description">Catat transaksi dengan cepat dan mudah. Sistem AI kami akan mengkategorikan otomatis untuk Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/Multi-Akun&Dompet.svg" alt="Multi-Akun & Dompet" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">Multi-Akun & Dompet</h3>
+                    <p class="feature-description">Kelola berbagai rekening bank, e-wallet, dan dompet tunai dalam satu dashboard terpadu.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/Analisis-Real-Time.svg" alt="Analisis Real-time" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">Analisis Real-time</h3>
+                    <p class="feature-description">Dapatkan insight mendalam tentang pola pengeluaran dan pemasukan Anda dengan visualisasi yang interaktif.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/Budget-Planning.svg" alt="Budget Planning" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">Budget Planning</h3>
+                    <p class="feature-description">Atur budget bulanan dan dapatkan notifikasi real-time ketika mendekati limit yang Anda tentukan.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/100%25-Gratis.svg" alt="100% Gratis" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">100% Gratis</h3>
+                    <p class="feature-description">Semua fitur dapat digunakan tanpa biaya apapun. Pembayaran hanya tersedia melalui fitur donasi untuk mendukung pengembangan aplikasi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="Attachment/Cloud-sync.svg" alt="Cloud Sync" style="width: 120px; height: 120px;" />
+                    </div>
+                    <h3 class="feature-title">Cloud Sync</h3>
+                    <p class="feature-description">Akses data Anda dari perangkat mana pun dengan sinkronisasi otomatis yang aman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mengapa Memilih MyMo?</h2>
+                <p class="section-description">Keunggulan yang membuat MyMo berbeda</p>
+            </div>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <div class="benefit-number">01</div>
+                        <h3 class="benefit-title">Interface yang Intuitif</h3>
+                        <p class="benefit-description">
+                            Desain yang clean dan mudah dipahami membuat pencatatan keuangan menjadi menyenangkan,
+                            bukan lagi tugas yang membosankan. Tidak perlu training atau tutorial panjang.
+                        </p>
+                    </div>
+                    <div class="benefit-visual">
+                        <img src="Attachment/Interface-yang-intuitif.svg" alt="Interface yang Intuitif" style="width: 100%; height: 300px;" />
+                    </div>
+                </div>
+                <div class="benefit-item reverse">
+                    <div class="benefit-content">
+                        <div class="benefit-number">02</div>
+                        <h3 class="benefit-title">AI-Powered Insights</h3>
+                        <p class="benefit-description">
+                            Machine learning kami menganalisis pola spending Anda dan memberikan rekomendasi
+                            personal untuk menghemat lebih banyak dan mencapai tujuan finansial lebih cepat.
+                        </p>
+                    </div>
+                    <div class="benefit-visual">
+                        <img src="Attachment/Ai-powered insights.svg" alt="AI-Powered Insights" style="width: 100%; height: 300px;" />
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-content">
+                        <div class="benefit-number">03</div>
+                        <h3 class="benefit-title">Privacy First</h3>
+                        <p class="benefit-description">
+                            Data Anda adalah milik Anda. Kami tidak pernah menjual data pengguna dan menggunakan
+                            enkripsi military-grade untuk melindungi setiap informasi finansial Anda.
+                        </p>
+                    </div>
+                    <div class="benefit-visual">
+                        <img src="Attachment/Privacy-first.svg" alt="Privacy First" style="width: 100%; height: 300px;" />
+                    </div>
+                </div>
+                <div class="benefit-item reverse">
+                    <div class="benefit-content">
+                        <div class="benefit-number">04</div>
+                        <h3 class="benefit-title">Gratis Selamanya</h3>
+                        <p class="benefit-description">
+                            Semua fitur MyMo gratis tanpa batas waktu. Jika aplikasi ini membantu Anda,
+                            dukung pengembang dengan donasi seikhlasnya untuk terus mengembangkan MyMo.
+                        </p>
+                    </div>
+                    <div class="benefit-visual">
+                        <img src="Attachment/Gratis-selamanya.svg" alt="Gratis Selamanya" style="width: 100%; height: 300px;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cara Kerja MyMo</h2>
+                <p class="section-description">3 langkah mudah menuju kebebasan finansial</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Daftar & Setup</h3>
+                        <p class="step-description">Buat akun dalam 30 detik dan tambahkan akun bank atau dompet yang ingin Anda kelola.</p>
+                    </div>
+                </div>
+                <div class="step-connector">
+                    <img src="Attachment/arrow-jikatampilanhp.svg" alt="Arrow" class="arrow-mobile" />
+                    <img src="Attachment/Arrow-jikatampilanluas.gif" alt="Arrow" class="arrow-desktop" />
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Catat Transaksi</h3>
+                        <p class="step-description">Input transaksi manual atau otomatis. AI kami akan mengkategorikan setiap transaksi dengan akurat.</p>
+                    </div>
+                </div>
+                <div class="step-connector">
+                    <img src="Attachment/arrow-jikatampilanhp.svg" alt="Arrow" class="arrow-mobile" />
+                    <img src="Attachment/Arrow-jikatampilanluas.gif" alt="Arrow" class="arrow-desktop" />
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Analisis & Optimasi</h3>
+                        <p class="step-description">Lihat dashboard interaktif, dapatkan insight, dan buat keputusan finansial yang lebih baik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Siap Mengambil Kontrol Keuangan Anda?</h2>
+                <p class="cta-description">Mulai kelola keuangan Anda dengan lebih cerdas dan terorganisir</p>
+                <div class="cta-buttons">
+                    <a href="login.html" class="btn btn-primary btn-lg">Mulai Sekarang</a>
+                    <a href="https://sociabuzz.com/mymo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Dukung Kami</a>
+                </div>
+                <p class="cta-note">Gratis selamanya. Dukung pengembang jika Anda merasa terbantu.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="attachment/logo-tansparan.png" alt="MyMo logo" class="logo-image">
+                    </div>
+                    <p class="footer-tagline">Your money, your freedom</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produk</h4>
+                        <ul>
+                            <li><a href="#features">Fitur</a></li>
+                            <li><a href="#benefits">Keunggulan</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Perusahaan</h4>
+                        <ul>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Karir</a></li>
+                            <li><a href="#">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MyMo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="pwa-install-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: white; padding: 15px 20px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); z-index: 9999; align-items: center; gap: 15px; border: 1px solid #eee; width: max-content; max-width: 90vw;">
+        <div>
+            <h4 style="margin: 0; color: #1e1e1e; font-size: 16px; font-family: Inter, sans-serif;">Install MyMo App</h4>
+            <p style="margin: 5px 0 0; color: #666; font-size: 14px; font-family: Inter, sans-serif;">Akses lebih cepat & mudah</p>
+        </div>
+        <button id="pwa-install-btn" class="btn btn-primary" style="padding: 8px 16px; font-size: 14px; white-space: nowrap;">Install</button>
+        <button id="pwa-close-btn" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999; padding: 0 5px; line-height: 1;">&times;</button>
+    </div>
+
+    <!-- PWA Bottom Navigation -->
+    <nav class="pwa-bottom-nav" style="display: none;">
+        <a href="#hero" class="pwa-nav-item active">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            <span>Beranda</span>
+        </a>
+        <a href="#features" class="pwa-nav-item">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span>Fitur</span>
+        </a>
+        <a href="login.html" class="pwa-nav-item">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>Masuk</span>
+        </a>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // PWA Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // PWA Install Prompt Handling
+        let deferredPrompt;
+        const installBanner = document.getElementById('pwa-install-banner');
+        const installBtn = document.getElementById('pwa-install-btn');
+        const closeBtn = document.getElementById('pwa-close-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBanner.style.display = 'flex';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            installBanner.style.display = 'none';
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response to the install prompt: ${outcome}`);
+                deferredPrompt = null;
+            }
+        });
+
+        closeBtn.addEventListener('click', () => {
+            installBanner.style.display = 'none';
+        });
+
+        window.addEventListener('appinstalled', () => {
+            installBanner.style.display = 'none';
+            console.log('PWA was installed');
+        });
+    </script>
+</body>
+</html>
