@@ -1,142 +1,107 @@
-# mymo - My Money Landing Page
+# MyMo - AI-Powered Personal Finance Tracker
 
-Landing page profesional untuk aplikasi pencatatan keuangan **mymo**.
+MyMo adalah aplikasi pencatatan keuangan cerdas yang dilengkapi dengan fitur AI Assistant, analisis data, dan pemindaian struk (OCR). Project ini terdiri dari Landing Page profesional, Web App berbasis Vue 3, Backend API berbasis Node.js/Express, dan Microservice OCR berbasis Python.
 
-## 🎯 Fitur Landing Page
+## 🌟 Fitur Utama
 
-### Sections
-- **Hero Section** - Headline utama dengan CTA dan statistik pengguna
-- **Features** - 6 fitur unggulan dengan icon dan deskripsi
-- **Benefits** - 4 keunggulan utama mymo dengan visual menarik
-- **How It Works** - 3 langkah mudah menggunakan mymo
-- **Testimonials** - Review dari pengguna dengan rating bintang
-- **CTA Section** - Call-to-action untuk download aplikasi
-- **Footer** - Navigasi lengkap dan social links
+- **Landing Page & Web App:** Antarmuka responsif dan modern untuk menarik pengguna serta Web App lengkap untuk manajemen keuangan.
+- **AI-Powered Insights (RAG):** Asisten cerdas yang menggunakan Retrieval-Augmented Generation (RAG) untuk memberikan insight personal terhadap pola pengeluaran.
+- **OCR Struk:** Microservice Python (FastAPI) untuk mengekstrak data dari foto struk belanja secara otomatis.
+- **Multi-Akun & Dompet:** Mendukung manajemen keuangan dari berbagai sumber dana.
+- **Analisis & Laporan:** Visualisasi data pengeluaran dan pemasukan dengan Chart.js.
 
-### Interactivity
-- Smooth scroll navigation
-- Sticky navbar dengan scroll effect
-- Floating animation pada phone mockup
-- Counter animation pada statistik
-- Hover effects pada cards
-- Mobile responsive menu
-- Fade-in animations saat scroll
+## 🛠 Tech Stack
 
-## 🎨 Design Highlights
+- **Frontend:** Vue 3, Vite, Pinia, Vue Router, Tailwind/Custom CSS.
+- **Backend:** Node.js, Express.js, PostgreSQL.
+- **OCR Service:** Python, FastAPI.
+- **Infrastruktur & Deployment:** Docker, Docker Compose, Nginx, Cloudflare Tunnels.
 
-- **Modern Design** - Clean, minimal, dan profesional
-- **Color Scheme** - Primary: Indigo (#6366f1), Secondary: Green (#10b981)
-- **Typography** - Inter font family untuk readability
-- **Responsive** - Optimized untuk desktop, tablet, dan mobile
-- **Animations** - Smooth transitions dan micro-interactions
-
-## 📱 Responsive Breakpoints
-
-- Desktop: 1200px+
-- Tablet: 768px - 1024px
-- Mobile: 320px - 767px
-
-## 🚀 Getting Started
-
-### Environment Variables
-
-Project ini menggunakan file `.env` untuk menyimpan konfigurasi yang sensitif (seperti URL API, secret keys, dll). File `.env` sudah diproteksi dan **tidak akan** di-push ke GitHub karena sudah ditambahkan ke `.gitignore`.
-
-Sebelum menjalankan project, duplikat file `.env.example` menjadi `.env`:
-
-```bash
-cp .env.example .env
-```
-
-Lalu sesuaikan nilai variabel di dalam file `.env` sesuai kebutuhan.
-
-### Cara Membuka
-
-1. **Langsung di Browser**
-   ```bash
-   open index.html
-   ```
-
-2. **Dengan Live Server** (jika menggunakan VS Code)
-   - Install extension "Live Server"
-   - Right-click pada index.html
-   - Pilih "Open with Live Server"
-
-3. **Dengan Python Server**
-   ```bash
-   python3 -m http.server 8000
-   ```
-   Buka browser ke `http://localhost:8000`
-
-## 📂 Struktur File
+## 📂 Struktur Project
 
 ```
 mymo/
-├── index.html      # HTML structure
-├── styles.css      # Complete styling with responsive design
-├── script.js       # Interactive features
-└── README.md       # Documentation
+├── src/                # Vue 3 Frontend (Web App)
+├── backend/            # Node.js Express API & RAG System
+├── ocr-service/        # Python FastAPI untuk ekstraksi struk
+├── docs/               # Dokumentasi sistem & arsitektur
+├── public/             # Aset statis frontend
+├── index.html          # Landing Page utama
+├── login.html          # Halaman Login statis
+├── signup.html         # Halaman Signup statis
+├── docker-compose.yml  # Konfigurasi deployment Docker
+└── ...
 ```
 
-## 🎯 Keunggulan mymo (Highlighted)
+## 🚀 Getting Started
 
-1. **Interface yang Intuitif** - Desain clean dan mudah dipahami
-2. **AI-Powered Insights** - Rekomendasi personal berdasarkan pola spending
-3. **Privacy First** - Enkripsi military-grade, data tidak dijual
-4. **Gratis Selamanya** - Fitur core gratis tanpa batas waktu
+### 1. Prerequisites
 
-## 🔧 Customization
+Pastikan Anda telah menginstal:
+- [Node.js](https://nodejs.org/) (v18 atau lebih baru)
+- [Python](https://www.python.org/) (jika menjalankan OCR tanpa Docker)
+- [Docker & Docker Compose](https://www.docker.com/) (Direkomendasikan)
 
-### Mengubah Warna
-Edit variabel CSS di `styles.css`:
-```css
-:root {
-    --primary: #6366f1;        /* Warna utama */
-    --secondary: #10b981;      /* Warna sekunder */
-}
+### 2. Environment Variables
+
+Project ini membutuhkan beberapa konfigurasi `.env`. 
+
+**Frontend:**
+Duplikat file `.env.example` menjadi `.env` di root direktori:
+```bash
+cp .env.example .env
+```
+File ini sudah diproteksi dan **tidak akan** di-push ke GitHub. Sesuaikan nilai variabel `VITE_API_URL`.
+
+**Backend:**
+Duplikat konfigurasi untuk backend:
+```bash
+cp backend/.env.example backend/.env
+```
+Sesuaikan konfigurasi database dan API key di dalamnya.
+
+### 3. Cara Menjalankan
+
+#### Menggunakan Docker (Rekomendasi)
+Cara termudah untuk menjalankan seluruh sistem (PostgreSQL, Backend, OCR, Web App, Cloudflare Tunnel):
+```bash
+docker-compose up -d --build
+```
+Setelah berjalan, Web App dapat diakses melalui port yang dikonfigurasi (misalnya `http://localhost:8080`).
+
+#### Menjalankan secara Manual (Local Development)
+
+**1. Jalankan Database (PostgreSQL)**
+Pastikan Anda memiliki instance PostgreSQL yang berjalan dan sesuai dengan kredensial di `backend/.env`.
+
+**2. Jalankan Backend**
+```bash
+cd backend
+npm install
+npm run dev
 ```
 
-### Mengubah Konten
-Edit langsung di `index.html` pada section yang diinginkan.
-
-### Menambah Fitur
-Tambahkan card baru di section `.features-grid` dengan struktur:
-```html
-<div class="feature-card">
-    <div class="feature-icon">🎯</div>
-    <h3 class="feature-title">Judul Fitur</h3>
-    <p class="feature-description">Deskripsi fitur...</p>
-</div>
+**3. Jalankan OCR Service**
+```bash
+cd ocr-service
+pip install -r requirements.txt
+python main.py
 ```
 
-## 📊 Performance
+**4. Jalankan Frontend (Vite)**
+```bash
+npm install
+npm run dev
+```
+Buka browser ke `http://localhost:5173` (atau port default Vite lainnya).
 
-- Lightweight: Total size < 50KB
-- Fast load time: < 1s on 3G
-- SEO optimized dengan semantic HTML
-- Accessibility compliant
+## 📄 Dokumentasi Tambahan
 
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 📝 Next Steps
-
-1. ✅ Landing page structure & design
-2. ✅ Responsive layout
-3. ✅ Interactive features
-4. 🔄 Connect to actual app download links
-5. 🔄 Add analytics tracking (Google Analytics, etc.)
-6. 🔄 Deploy to hosting (Vercel, Netlify, GitHub Pages)
+Untuk dokumentasi lebih lanjut mengenai deployment, arsitektur, dan integrasi fitur spesifik, silakan lihat file berikut:
+- [`DOCKER_DEPLOYMENT.md`](DOCKER_DEPLOYMENT.md) - Panduan deployment lengkap menggunakan Docker.
+- [`GOOGLE_OAUTH_SETUP.md`](GOOGLE_OAUTH_SETUP.md) - Panduan setup Google Login.
+- [`docs/`](docs/) - Dokumentasi lengkap arsitektur dan API.
 
 ## 📄 License
 
-© 2026 mymo. All rights reserved.
-
----
-
-**Built with ❤️ using HTML, CSS, and vanilla JavaScript**
+© 2026 MyMo. All rights reserved.
